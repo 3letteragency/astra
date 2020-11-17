@@ -1,12 +1,13 @@
 
 # Table of Contents
 
-1.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span>](#org719d184)
-2.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span>](#orgd3d589e)
+1.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span>](#org43ec54b)
+2.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span>](#orge102224)
+3.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span>](#org58a3240)
 
 
 
-<a id="org719d184"></a>
+<a id="org43ec54b"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span>
 
@@ -20,9 +21,18 @@
     This should all give a pretty good picture of what is going on in the game so we can begin flying and experimenting with the Control and Flight functions.
 
 
-<a id="orgd3d589e"></a>
+<a id="orge102224"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span>
 
--   Another Saturday. I got the KSP systemd service and automatated opening the firewall for kRPC ports for connections from the controlling machine. Final image is built so we can start with the fun stuff, piping data into OpenMCT and GMAT.
+-   Another Saturday. I got the KSP systemd service and automatated opening the firewall for kRPC ports for connections from the controlling machine. Final image is built so we can start with the fun stuff, piping data into OpenMCT and GMAT. This will be roughly inspired by Telemachus and kerbal-openmct(both of which are quite outdated).
+
+
+<a id="org58a3240"></a>
+
+# <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span>
+
+-   Its been a while, life was pretty crazy the last 6 weeks and I haven&rsquo;t done anything for this. I&rsquo;ve moved to Philadelphia, been her for almost a month now. Finally beginning to feel settled and can think clearly about side projects again. Today I rebuilt to the \`astra-node\` image and redeployed the terraform plan just to make sure everything works as I remember. I&rsquo;ve reviewed this log and the README, lost my way with this a bit so had to reorient. Looks like we&rsquo;re at the point of needing to setup the kRPC streams(all of them). I think what I&rsquo;ll do is setup these streams in the backend server, then write an API around that which will be called by OpenMCT(javascript/jquery) - however it should be noted this will only be for observation and basic/non-critical controls. All flight control/automation will be done on the &ldquo;flight&rdquo; servers to minimize communication latency. Or rather, anything that would actually be done onboard would be done on the &ldquo;flight&rdquo; servers, and anything that would be done remotely will be done on the c2/OpenMCT node(s). So I&rsquo;m realizing we might have 2 instances of OpenMCT, one &ldquo;onboard&rdquo; and one &ldquo;remote&rdquo; - since I think want to use OpenMCT as the flight  interface, heavily inspired by the new Crew Dragon touchscreen panel.
+    
+    Anyway. Next step in a sentance; backend data streams and astrctl cli(which will basically implement identical functionality to the OpenMCT C2, just entirely textual).
 
