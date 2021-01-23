@@ -34,7 +34,9 @@
   - [X] Choose kRPC client language - C++
   - [X] VLC/Xvfb workflow for graphical debugging and SFS building
   - [X] Debug RO Install, problems w/ Kopernicus?
-** TODO Stage 2 - Data [0/1]
+** TODO Stage 2 - Data [0/3]
+- [ ] Restructure project
+- [ ] Update Terraform modules to Vultr v2 Provider
 - [ ] Set up client w/ all kRPC Data Stream
   * Pipe into GMAT and OpenMCT ??? - yes
 ** TODO Stage 3 - RL Software integrations [0/2]
