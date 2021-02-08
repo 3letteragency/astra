@@ -1,19 +1,22 @@
-data "http" "c2_ip" {
-  url = "https://ifconfig.me"
+data "vultr_snapshot" "astra_node" {
+  filter {
+    name   = "description"
+    values = ["astra-node-${var.astra_image_version}"]
+  }
 }
 
-resource "vultr_server" "astra_node" {
+resource "vultr_instance" "astra_node" {
   count       = var.flight_count
-  plan_id     = var.machine_type
-  region_id   = data.vultr_region.region.id
+  plan        = var.machine_type
+  region      = var.region
   snapshot_id = data.vultr_snapshot.astra_node.id
   label       = "astra-flight-${count.index}"
   hostname    = "astra-flight-${count.index}"
 
   connection {
-    type = "ssh"
-    user = "root"
-    host = self.main_ip
+    type        = "ssh"
+    user        = "root"
+    host        = self.main_ip
     private_key = file("~/.ssh/id_rsa")
   }
 

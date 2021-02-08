@@ -24,3 +24,6 @@
   - Well, almost exactly two months since last update and I've NOT DONE A SINGLE BIT OF WORK. Ugh. Holidays and general life craziness(Did 2020 ever really end...). I've also got a new primary dev machine, so will need to first ensure I can run all the build scripts and what not from here - then I can get back to data stream integration as above. WML!
 
     UPDATE: Ugh. I suppose I should update my terraform modules to use the Vultr Provider v2..and might as well restructure some of the project while I'm at it..picked up a few tricks since I started this.
+
+* <2021-02-08 Mon>
+- Just got off work and am going to go for a run. If afterwards I don't at least ensure I can download the Steam game, build the snapshot, and port everything to the Vultr TF Provider v2, someone open an issue on GH and call me a jabroni.
