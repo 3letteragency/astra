@@ -27,3 +27,6 @@
 
 * <2021-02-08 Mon>
 - Just got off work and am going to go for a run. If afterwards I don't at least ensure I can download the Steam game, build the snapshot, and port everything to the Vultr TF Provider v2, someone open an issue on GH and call me a jabroni.
+
+* <2021-02-09 Tue>
+- Alright so I drank a /few/ beers and my ojectives changed. I got annoyed trying to port my build scripts over to my new machine, the slight nuances here and there, and decided instead of working on the TF stuff to move the build scripts over to github actions. At this point, I've got the game pulling/archiving/and uploading to s3 done. So thats nice. Next is to port the image build script over to GH Actions and the packer build over to the Vultr Packer plugin to v2...coulda swore I already did, will need to check my ThinkPad, it might be on there. In any case it is a small task. So in short I didn't get done what I'd originally planned, but got other equally helpful stuff done. You can still call me a jabroni or whatever but I'm just gonna keep drinking beers and chipping away at this.
