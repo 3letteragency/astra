@@ -1,15 +1,16 @@
 
 # Table of Contents
 
-1.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span>](#org3bba375)
-2.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span>](#org83c5f6a)
-3.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span>](#org1465ee2)
-4.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-21 Thu&gt;</span></span>](#org8efee93)
-5.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-08 Mon&gt;</span></span>](#orgd303060)
+1.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span>](#orgca5e87a)
+2.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span>](#org6e9781f)
+3.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span>](#org19fa30b)
+4.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-21 Thu&gt;</span></span>](#org9dd52e6)
+5.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-08 Mon&gt;</span></span>](#org6c4ffa4)
+6.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-09 Tue&gt;</span></span>](#org1d65788)
 
 
 
-<a id="org3bba375"></a>
+<a id="orgca5e87a"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span>
 
@@ -23,14 +24,14 @@
     This should all give a pretty good picture of what is going on in the game so we can begin flying and experimenting with the Control and Flight functions.
 
 
-<a id="org83c5f6a"></a>
+<a id="org6e9781f"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span>
 
 -   Another Saturday. I got the KSP systemd service and automatated opening the firewall for kRPC ports for connections from the controlling machine. Final image is built so we can start with the fun stuff, piping data into OpenMCT and GMAT. This will be roughly inspired by Telemachus and kerbal-openmct(both of which are quite outdated).
 
 
-<a id="org1465ee2"></a>
+<a id="org19fa30b"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span>
 
@@ -39,7 +40,7 @@
     Anyway. Next step in a sentance; backend data streams and astrctl cli(which will basically implement identical functionality to the OpenMCT C2, just entirely textual).
 
 
-<a id="org8efee93"></a>
+<a id="org9dd52e6"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-21 Thu&gt;</span></span>
 
@@ -48,9 +49,18 @@
     UPDATE: Ugh. I suppose I should update my terraform modules to use the Vultr Provider v2..and might as well restructure some of the project while I&rsquo;m at it..picked up a few tricks since I started this.
 
 
-<a id="orgd303060"></a>
+<a id="org6c4ffa4"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-08 Mon&gt;</span></span>
 
 -   Just got off work and am going to go for a run. If afterwards I don&rsquo;t at least ensure I can download the Steam game, build the snapshot, and port everything to the Vultr TF Provider v2, someone open an issue on GH and call me a jabroni.
+
+
+<a id="org1d65788"></a>
+
+# <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-09 Tue&gt;</span></span>
+
+-   Alright so I drank a *few* beers and my ojectives changed. I got annoyed trying to port my build scripts over to my new machine, the slight nuances here and there, and decided instead of working on the TF stuff to move the build scripts over to github actions. At this point, I&rsquo;ve got the game pulling/archiving/and uploading to s3 done. So thats nice. Next is to port the image build script over to GH Actions and the packer build over to the Vultr Packer plugin to v2&#x2026;coulda swore I already did, will need to check my ThinkPad, it might be on there. In any case it is a small task. So in short I didn&rsquo;t get done what I&rsquo;d originally planned, but got other equally helpful stuff done. You can still call me a jabroni or whatever but I&rsquo;m just gonna keep drinking beers and chipping away at this.
+    
+    Update: Ok too many beers, gonna stop touching stuff. So what I&rsquo;d originally set out to do yesterday(update the TF provider to Vultr v2) has already been done, and it is the updating Packer to the Vultr v2 plugin that still needs to be done&#x2026; <del>yay</del> cheers?
 

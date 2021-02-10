@@ -30,3 +30,5 @@
 
 * <2021-02-09 Tue>
 - Alright so I drank a /few/ beers and my ojectives changed. I got annoyed trying to port my build scripts over to my new machine, the slight nuances here and there, and decided instead of working on the TF stuff to move the build scripts over to github actions. At this point, I've got the game pulling/archiving/and uploading to s3 done. So thats nice. Next is to port the image build script over to GH Actions and the packer build over to the Vultr Packer plugin to v2...coulda swore I already did, will need to check my ThinkPad, it might be on there. In any case it is a small task. So in short I didn't get done what I'd originally planned, but got other equally helpful stuff done. You can still call me a jabroni or whatever but I'm just gonna keep drinking beers and chipping away at this.
+
+  Update: Ok too many beers, gonna stop touching stuff. So what I'd originally set out to do yesterday(update the TF provider to Vultr v2) has already been done, and it is the updating Packer to the Vultr v2 plugin that still needs to be done... +yay+ cheers?
