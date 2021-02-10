@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  game-archiver:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Setup SteamCMD
+        uses: CyberAndrii/setup-steamcmd@v1.1.1
+
+      - name: Fetch, Archive, and push KSP
+        env:
+          STEAM_USER: ${{ secrets.STEAM_USER }}
+          STEAM_PASS: ${{ secrets.STEAM_PASS }}
+          S3_CFG: ${{ secrets.S3_CFG }}
+          ASTRA_ASSETS_BUCKET: "s3://astra-assets"
+          ASTRA_ASSETS_BUCKET_GAME_ARCHIVE_PREFIX: "game-archives"
+          KSP_STEAM_APP_ID: "220200"
+          KSP_STEAM_DEPOT_ID: "220203"
+          KSP_STEAM_MANIFEST_ID: "8147916484178367240"
+          KSP_VERSION: "1.8.1"
+          KSP_TMP_DIR: "ksp"
+        run: |
+          sudo apt -y update
+          sudo apt -y install s3cmd
+          steamcmd +login $STEAM_USER $STEAM_PASS +download_depot $KSP_STEAM_APP_ID $KSP_STEAM_DEPOT_ID $KSP_STEAM_MANIFEST_ID +quit
+          mkdir "$KSP_TMP_DIR"
+          mv /opt/hostedtoolcache/steamcmd/latest/i386/linux32/steamapps/content/app_"$KSP_STEAM_APP_ID"/depot_"$KSP_STEAM_DEPOT_ID"/* "$KSP_TMP_DIR"
+          tar -C "$KSP_TMP_DIR" -czvf ksp-$KSP_VERSION.tar.gz .
+          echo "$S3_CFG" > .s3cfg
+          s3cmd -c .s3cfg put ./ksp-$KSP_VERSION.tar.gz $ASTRA_ASSETS_BUCKET/$ASTRA_ASSETS_BUCKET_GAME_ARCHIVE_PREFIX/ksp-$KSP_VERSION.tar.gz
