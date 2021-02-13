@@ -1,19 +1,19 @@
-variable "region" {
-  type = string
-  default = "New Jersey"
+variable "flight_count" {
+  type    = number
+  default = 1
 }
 
 variable "machine_type" {
-  type = number
-  default = 204
+  type    = string
+  default = "hfc-6c-24gb"
 }
 
-variable "snapshot" {
-  type = string
-  default = "astra-node"
+variable "region" {
+  type    = string
+  default = "ewr"
 }
 
-variable "flight_count" {
-  type = string
-  default = 1
+variable "astra_image_version" {
+  type    = string
+  default = ""
 }

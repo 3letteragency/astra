@@ -4,9 +4,9 @@
 #+EMAIL: tylerweldon94@gmail.com
 
 * Astra
-** STRT Stage 1 - Prep [5/6]
+** STRT Stage 1 - Prep [6/6]
   - [X] Script or Ansible or etc. Out Packer Script provisioner(getting long and unweildy)
-  - [-] Base VM Image(Packer) [14/14]
+  - [X] Base VM Image(Packer) [14/14]
     - [X] Change KSP version from 1.9.1 to 1.8.1 in SpaceX Pack craft files
     - [X] Add vehicles to Astra game save VAB
     - [X] Figure out how to get a ~systemd --user~ instance running on Astra user
@@ -34,7 +34,15 @@
   - [X] Choose kRPC client language - C++
   - [X] VLC/Xvfb workflow for graphical debugging and SFS building
   - [X] Debug RO Install, problems w/ Kopernicus?
-** TODO Stage 2 - Data [0/1]
+** TODO Stage 2 - Data(and Project Automation) [1/3]
+- [ ] Restructure project
+  - Split Components into own repos [1/5]
+    - [X] Game
+    - [X] Image builder
+    - [ ] Ansible Pull ALL game assets(mods) from s3
+    - [ ] Save ALL game assets locally, in s3, as a release asset in github, and tar'd to google drive
+    - [ ] Terraform module
+- [X] Update Terraform modules to Vultr v2 Provider
 - [ ] Set up client w/ all kRPC Data Stream
   * Pipe into GMAT and OpenMCT ??? - yes
 ** TODO Stage 3 - RL Software integrations [0/2]

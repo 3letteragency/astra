@@ -1,32 +1,32 @@
 
 # Table of Contents
 
-1.  [Astra](#orge58c519)
-    1.  [Stage 1 - Prep <code>[5/6]</code>](#orgd61d65c)
-    2.  [Stage 2 - Data <code>[0/1]</code>](#org6452022)
-    3.  [Stage 3 - RL Software integrations <code>[0/2]</code>](#org8942559)
-    4.  [Stage 4 - Operations <code>[0/3]</code>](#org9da0a69)
-        1.  [For re-usable missions: <code>[0/1]</code>](#org1bda0c3)
-        2.  [Starlink(s) <code>[0/0]</code>](#org182b3ff)
-        3.  [Long running, real time ops <code>[0/0]</code>](#org6ebc88d)
-    5.  [Stage 5 - Stream Real Time Ops <code>[0/0]</code>](#orgd8d86ec)
-    6.  [Backlog/As Needed <code>[0/2]</code>](#org861ef4f)
-    7.  [KSP Mod Requirements](#orgd999962)
-    8.  [On Hold](#orgb22f681)
+1.  [Astra](#org409b89f)
+    1.  [Stage 1 - Prep <code>[6/6]</code>](#orge27c5f5)
+    2.  [Stage 2 - Data(and Project Automation) <code>[1/3]</code>](#orgff88e35)
+    3.  [Stage 3 - RL Software integrations <code>[0/2]</code>](#orgb454c0c)
+    4.  [Stage 4 - Operations <code>[0/3]</code>](#org65892f4)
+        1.  [For re-usable missions: <code>[0/1]</code>](#org38e0fb3)
+        2.  [Starlink(s) <code>[0/0]</code>](#org4f6102c)
+        3.  [Long running, real time ops <code>[0/0]</code>](#org171a6fa)
+    5.  [Stage 5 - Stream Real Time Ops <code>[0/0]</code>](#org4a442e9)
+    6.  [Backlog/As Needed <code>[0/2]</code>](#orgaea0a22)
+    7.  [KSP Mod Requirements](#orgb3d16c3)
+    8.  [On Hold](#orga44543c)
 
 
 
-<a id="orge58c519"></a>
+<a id="org409b89f"></a>
 
 # Astra
 
 
-<a id="orgd61d65c"></a>
+<a id="orge27c5f5"></a>
 
-## STRT Stage 1 - Prep <code>[5/6]</code>
+## STRT Stage 1 - Prep <code>[6/6]</code>
 
 -   [X] Script or Ansible or etc. Out Packer Script provisioner(getting long and unweildy)
--   [-] Base VM Image(Packer) <code>[14/14]</code>
+-   [X] Base VM Image(Packer) <code>[14/14]</code>
     -   [X] Change KSP version from 1.9.1 to 1.8.1 in SpaceX Pack craft files
     -   [X] Add vehicles to Astra game save VAB
     -   [X] Figure out how to get a `systemd --user` instance running on Astra user
@@ -56,15 +56,23 @@
 -   [X] Debug RO Install, problems w/ Kopernicus?
 
 
-<a id="org6452022"></a>
+<a id="orgff88e35"></a>
 
-## TODO Stage 2 - Data <code>[0/1]</code>
+## TODO Stage 2 - Data(and Project Automation) <code>[1/3]</code>
 
+-   [ ] Restructure project
+    -   Split Components into own repos <code>[2/5]</code>
+        -   [X] Game
+        -   [X] Image builder
+        -   [ ] Ansible Pull ALL game assets(mods) from s3
+        -   [ ] Save ALL game assets locally, in s3, as a release asset in github, and tar&rsquo;d to google drive
+        -   [ ] Terraform module
+-   [X] Update Terraform modules to Vultr v2 Provider
 -   [ ] Set up client w/ all kRPC Data Stream
     -   Pipe into GMAT and OpenMCT ??? - yes
 
 
-<a id="org8942559"></a>
+<a id="orgb454c0c"></a>
 
 ## TODO Stage 3 - RL Software integrations <code>[0/2]</code>
 
@@ -72,34 +80,34 @@
 -   [ ] [OpenMCT](https://github.com/nasa/openmct) - Ops HUD
 
 
-<a id="org9da0a69"></a>
+<a id="org65892f4"></a>
 
 ## TODO Stage 4 - Operations <code>[0/3]</code>
 
 
-<a id="org1bda0c3"></a>
+<a id="org38e0fb3"></a>
 
 ### [-] For re-usable missions: <code>[0/1]</code>
 
 1.  [ ] Will need something like [FMRS](https://forum.kerbalspaceprogram.com/index.php?/topic/157214-19x-flight-manager-for-reusable-stages-fmrs-now-with-recoverycontroller-integration/) implemented via kRPC
 
 
-<a id="org182b3ff"></a>
+<a id="org4f6102c"></a>
 
 ### [-] Starlink(s) <code>[0/0]</code>
 
 
-<a id="org6ebc88d"></a>
+<a id="org171a6fa"></a>
 
 ### [-] Long running, real time ops <code>[0/0]</code>
 
 
-<a id="orgd8d86ec"></a>
+<a id="org4a442e9"></a>
 
 ## TODO Stage 5 - Stream Real Time Ops <code>[0/0]</code>
 
 
-<a id="org861ef4f"></a>
+<a id="orgaea0a22"></a>
 
 ## TODO Backlog/As Needed <code>[0/2]</code>
 
@@ -118,7 +126,7 @@
     -   [ ] Astractl
 
 
-<a id="orgd999962"></a>
+<a id="orgb3d16c3"></a>
 
 ## KSP Mod Requirements
 
@@ -128,7 +136,7 @@
 -   [kOS](https://ksp-kos.github.io/KOS/) - kOS might be useful for some simpler tasks where we don&rsquo;t want the full power of kRPC. Might use, might not. We&rsquo;ll see.
 
 
-<a id="orgb22f681"></a>
+<a id="orga44543c"></a>
 
 ## On Hold
 
