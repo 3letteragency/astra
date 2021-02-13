@@ -1,5 +1,0 @@
-- name: Configure primary astra node user astra
-  user:
-    name: "{{ game_user }}"
-    shell: /bin/bash
-

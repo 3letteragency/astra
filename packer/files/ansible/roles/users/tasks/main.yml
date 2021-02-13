@@ -1,2 +1,0 @@
-- name: Configure Astra node users
-  import_tasks: game-user.yml
