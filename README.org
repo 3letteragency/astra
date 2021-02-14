@@ -36,12 +36,13 @@
   - [X] Debug RO Install, problems w/ Kopernicus?
 ** TODO Stage 2 - Data(and Project Automation) [1/3]
 - [ ] Restructure project
-  - Split Components into own repos [1/5]
+  - Split Components into own repos [3/5]
     - [X] Game
     - [X] Image builder
     - [ ] Ansible Pull ALL game assets(mods) from s3
+      - Canceling splitting out ansible, I think it is fairly tightly coupled with the image anyway, will always want to test both togehter. Am still moving all assets to s3 however.
     - [ ] Save ALL game assets locally, in s3, as a release asset in github, and tar'd to google drive
-    - [ ] Terraform module
+    - [X] Terraform module
 - [X] Update Terraform modules to Vultr v2 Provider
 - [ ] Set up client w/ all kRPC Data Stream
   * Pipe into GMAT and OpenMCT ??? - yes

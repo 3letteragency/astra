@@ -42,3 +42,7 @@
   https://github.com/Oogy/astra-ksp
 
   Next will be a separate repo for the Terraform module, and possibly the ansible plan. Maybe store a tar of the Ansible files as a release asset, pull it into the build similarly to https://github.com/Oogy/packer-astra-flight/blob/fe2cb345191f138a95901e7f0b1638892483c9af/.github/workflows/build.yml#L31. Time for a workout and sleep.
+
+
+* <2021-02-13 Sat>
+- Just continuing from yesterday. Got the TF module in its own repo. Also setup a Discord git webhook for the 3LA org.

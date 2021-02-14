@@ -1,27 +1,27 @@
 
 # Table of Contents
 
-1.  [Astra](#org409b89f)
-    1.  [Stage 1 - Prep <code>[6/6]</code>](#orge27c5f5)
-    2.  [Stage 2 - Data(and Project Automation) <code>[1/3]</code>](#orgff88e35)
-    3.  [Stage 3 - RL Software integrations <code>[0/2]</code>](#orgb454c0c)
-    4.  [Stage 4 - Operations <code>[0/3]</code>](#org65892f4)
-        1.  [For re-usable missions: <code>[0/1]</code>](#org38e0fb3)
-        2.  [Starlink(s) <code>[0/0]</code>](#org4f6102c)
-        3.  [Long running, real time ops <code>[0/0]</code>](#org171a6fa)
-    5.  [Stage 5 - Stream Real Time Ops <code>[0/0]</code>](#org4a442e9)
-    6.  [Backlog/As Needed <code>[0/2]</code>](#orgaea0a22)
-    7.  [KSP Mod Requirements](#orgb3d16c3)
-    8.  [On Hold](#orga44543c)
+1.  [Astra](#org5a647b4)
+    1.  [Stage 1 - Prep <code>[6/6]</code>](#org7123677)
+    2.  [Stage 2 - Data(and Project Automation) <code>[1/3]</code>](#org8e02ba9)
+    3.  [Stage 3 - RL Software integrations <code>[0/2]</code>](#org4f0c7e0)
+    4.  [Stage 4 - Operations <code>[0/3]</code>](#orgdfccb03)
+        1.  [For re-usable missions: <code>[0/1]</code>](#org1a029bc)
+        2.  [Starlink(s) <code>[0/0]</code>](#orgde1d395)
+        3.  [Long running, real time ops <code>[0/0]</code>](#org9811ea2)
+    5.  [Stage 5 - Stream Real Time Ops <code>[0/0]</code>](#org6e29fae)
+    6.  [Backlog/As Needed <code>[0/2]</code>](#org5b5aa2a)
+    7.  [KSP Mod Requirements](#orgcb91a88)
+    8.  [On Hold](#org2820c95)
 
 
 
-<a id="org409b89f"></a>
+<a id="org5a647b4"></a>
 
 # Astra
 
 
-<a id="orge27c5f5"></a>
+<a id="org7123677"></a>
 
 ## STRT Stage 1 - Prep <code>[6/6]</code>
 
@@ -56,23 +56,24 @@
 -   [X] Debug RO Install, problems w/ Kopernicus?
 
 
-<a id="orgff88e35"></a>
+<a id="org8e02ba9"></a>
 
 ## TODO Stage 2 - Data(and Project Automation) <code>[1/3]</code>
 
 -   [ ] Restructure project
-    -   Split Components into own repos <code>[2/5]</code>
+    -   Split Components into own repos <code>[3/5]</code>
         -   [X] Game
         -   [X] Image builder
         -   [ ] Ansible Pull ALL game assets(mods) from s3
+            -   Canceling splitting out ansible, I think it is fairly tightly coupled with the image anyway, will always want to test both togehter. Am still moving all assets to s3 however.
         -   [ ] Save ALL game assets locally, in s3, as a release asset in github, and tar&rsquo;d to google drive
-        -   [ ] Terraform module
+        -   [X] Terraform module
 -   [X] Update Terraform modules to Vultr v2 Provider
 -   [ ] Set up client w/ all kRPC Data Stream
     -   Pipe into GMAT and OpenMCT ??? - yes
 
 
-<a id="orgb454c0c"></a>
+<a id="org4f0c7e0"></a>
 
 ## TODO Stage 3 - RL Software integrations <code>[0/2]</code>
 
@@ -80,34 +81,34 @@
 -   [ ] [OpenMCT](https://github.com/nasa/openmct) - Ops HUD
 
 
-<a id="org65892f4"></a>
+<a id="orgdfccb03"></a>
 
 ## TODO Stage 4 - Operations <code>[0/3]</code>
 
 
-<a id="org38e0fb3"></a>
+<a id="org1a029bc"></a>
 
 ### [-] For re-usable missions: <code>[0/1]</code>
 
 1.  [ ] Will need something like [FMRS](https://forum.kerbalspaceprogram.com/index.php?/topic/157214-19x-flight-manager-for-reusable-stages-fmrs-now-with-recoverycontroller-integration/) implemented via kRPC
 
 
-<a id="org4f6102c"></a>
+<a id="orgde1d395"></a>
 
 ### [-] Starlink(s) <code>[0/0]</code>
 
 
-<a id="org171a6fa"></a>
+<a id="org9811ea2"></a>
 
 ### [-] Long running, real time ops <code>[0/0]</code>
 
 
-<a id="org4a442e9"></a>
+<a id="org6e29fae"></a>
 
 ## TODO Stage 5 - Stream Real Time Ops <code>[0/0]</code>
 
 
-<a id="orgaea0a22"></a>
+<a id="org5b5aa2a"></a>
 
 ## TODO Backlog/As Needed <code>[0/2]</code>
 
@@ -126,7 +127,7 @@
     -   [ ] Astractl
 
 
-<a id="orgb3d16c3"></a>
+<a id="orgcb91a88"></a>
 
 ## KSP Mod Requirements
 
@@ -136,7 +137,7 @@
 -   [kOS](https://ksp-kos.github.io/KOS/) - kOS might be useful for some simpler tasks where we don&rsquo;t want the full power of kRPC. Might use, might not. We&rsquo;ll see.
 
 
-<a id="orga44543c"></a>
+<a id="org2820c95"></a>
 
 ## On Hold
 
