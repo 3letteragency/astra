@@ -46,3 +46,6 @@
 
 * <2021-02-13 Sat>
 - Just continuing from yesterday. Got the TF module in its own repo. Also setup a Discord git webhook for the 3LA org.
+
+* <2021-03-01 Mon>
+- Life really do be like that sometimes, yk?

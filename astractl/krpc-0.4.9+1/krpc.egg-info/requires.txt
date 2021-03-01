@@ -1,2 +1,0 @@
-enum34>=0.9
-protobuf>=3.6

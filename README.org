@@ -43,6 +43,7 @@
       - Canceling splitting out ansible, I think it is fairly tightly coupled with the image anyway, will always want to test both togehter. Am still moving all assets to s3 however.
     - [ ] Save ALL game assets locally, in s3, as a release asset in github, and tar'd to google drive
     - [X] Terraform module
+    - [ ] Move project planning to Github Project Planner
 - [X] Update Terraform modules to Vultr v2 Provider
 - [ ] Set up client w/ all kRPC Data Stream
   * Pipe into GMAT and OpenMCT ??? - yes
