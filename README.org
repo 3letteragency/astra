@@ -4,49 +4,33 @@
 #+EMAIL: tylerweldon94@gmail.com
 
 * Astra
-** [X] Stage 1 - Prep [6/6]
-  - [X] Script or Ansible or etc. Out Packer Script provisioner(getting long and unweildy)
-  - [X] Base VM Image(Packer) [14/14]
-    - [X] Change KSP version from 1.9.1 to 1.8.1 in SpaceX Pack craft files
-    - [X] Add vehicles to Astra game save VAB
-    - [X] Figure out how to get a ~systemd --user~ instance running on Astra user
-    - [X] Systemd user service to start game
-      - added systemd service/linger config, but may need to set XDG_RUNTIME_DIR var in the systemd task as shown [[https://gist.github.com/carlwgeorge/dbe186ce7562843932ebd03ccccd1a6d][here]].
-    - [X] Figure something out w/ firewall
-      + I think leaving the image as is, and opening the kRPC Ports via a TF provisioner combined w/ the HTTP Datasource(to get ifconfig.me data) will be a good solution
-    - [X] Automate mod install [6/6]
-      - [X] [[https://forum.kerbalspaceprogram.com/index.php?/topic/193933-110-kks-spacex-pack-july-06-2020/][KK's SpaceX Pack]]
-      - [X] RO via CKAN
-      - [X] Principia
-      - [X] Install CKAN.deb
-      - [X] kRPC manually from github
-      - [X] AutoLoadGame - Allista
-    - [X] astra-base.sfs
-      * +Might need to hop into a graphical run to get the minimal base + mods setup+
-    - [X] AutoLoadGame.conf
-    - [X] settings.cfg
-    - [X] krpc-settings.cfg
-    - [X] AutoLoadGame - Now supports specifying SFS files
-    - [X] POC kRPC - connection over Internet successful, responses receieved
-    - [X] Install KSP +1.7.3+ 1.8.1 from S3
-    - [X] File provision packer/files/*
-  - [X] Automate game-archiver
-  - [X] Choose kRPC client language - C++
-  - [X] VLC/Xvfb workflow for graphical debugging and SFS building
-  - [X] Debug RO Install, problems w/ Kopernicus?
-** TODO Stage 2 - Data(and Project Automation) [1/3]
-- [ ] Restructure project
-  - Split Components into own repos [3/5]
-    - [X] Game
-    - [X] Image builder
-    - [ ] Ansible Pull ALL game assets(mods) from s3
-      - Canceling splitting out ansible, I think it is fairly tightly coupled with the image anyway, will always want to test both togehter. Am still moving all assets to s3 however.
-    - [ ] Save ALL game assets locally, in s3, as a release asset in github, and tar'd to google drive
-    - [X] Terraform module
-    - [ ] Move project planning to Github Project Planner
-- [X] Update Terraform modules to Vultr v2 Provider
-- [ ] Set up client w/ all kRPC Data Stream
-  * Pipe into GMAT and OpenMCT ??? - yes
+** TODO Stage 1 - Prep [0/6]
+  - [ ] Kubernetes Deployment [0/9]
+    - [ ] Mod install [0/6]
+      - [ ] [[https://forum.kerbalspaceprogram.com/index.php?/topic/193933-110-kks-spacex-pack-july-06-2020/][KK's SpaceX Pack]]
+      - [ ] RO via CKAN
+      - [ ] Principia
+      - [ ] Install CKAN.deb
+      - [ ] kRPC manually from github
+      - [ ] AutoLoadGame - Allista
+    - [ ] astra-base.sfs
+    - [ ] AutoLoadGame.conf
+    - [ ] settings.cfg
+    - [ ] krpc-settings.cfg
+    - [ ] AutoLoadGame - Now supports specifying SFS files
+    - [ ] POC kRPC - connection over Internet successful, responses receieved
+    - [ ] Install KSP +1.7.3+ 1.8.1 from S3
+    - [ ] File provision packer/files/*
+  - [ ] Automate game-archiver
+  - [ ] Choose kRPC client language - C++/Python
+  - [ ] Xpra/xpra attach workflow for graphical debugging and SFS building
+  - [ ] Debug RO Install, problems w/ Kopernicus?
+** TODO Stage 2 - Data(and Project Automation) [0/1]
+- [ ] Python classes [0/4]
+  - [ ] CraftTransmitter
+  - [ ] CraftReciever
+  - [ ] StationTransmitter
+  - [ ] StationReceiver
 ** TODO Stage 3 - RL Software integrations [0/2]
 - [ ] [[https://opensource.gsfc.nasa.gov/projects/GMAT/index.php][GMAT]] - Planning
 - [ ] [[https://github.com/nasa/openmct][OpenMCT]] - Ops HUD
@@ -58,24 +42,13 @@
 ** TODO Stage 5 - Stream Real Time Ops [0/0]
 ** TODO Backlog/As Needed [0/2]
   - [ ] If TCP latency becomes a problem, try implementing a kRPC unix socket comm. protocol
-  - [ ] Need to implement an automated Xvfb workflow using screenshots to debug Automation
     * +There are module load errors in KSP.log, not sure if its preventing AutoLoadGame from doing its thing, or if that is related to the Changelog startup dialog in KSP Main Menu.+ KSP 1.8.1 Works great
     * +Why are we stuck at the Change Log dialog on KSP Start?+ A bit annoying but appears to be inconsequential for my automation purposes.
       * ksp settings.cfg:
         * SHOW_WHATSNEW_DIALOG = False
         * +Version 1.7.3 was not honoring settings.cfg, lets see if 1.8.1 works+ Still not honored in 1.8.1 but again, appears inconsequential
-  - [ ] Split Project into multiple repos [0/3]
-    - [ ] Terraform [0/2]
-      - [ ] Modules
-      - [ ] Plans
-    - [ ] Packer Base Image
-    - [ ] Astractl
 ** KSP Mod Requirements
 - [[https://github.com/allista/AutoLoadGame][AutoLoadGame]] - by Allista, allows creating a configuration file in your saves dir that will automatically load the specified sfs file upong game start.
 - [[https://krpc.github.io/krpc/][kRPC]] - kRPC allows you to control Kerbal Space Program from scripts running outside of the game.
 - [[https://github.com/KSP-RO/RealismOverhaul/wiki][Realism Overhaul]] - Its not certain this will place nice with [[https://krpc.github.io/krpc/][kRPC]], however realistic(ish?) control theory is really the purpose of this project so we will proceed with it until/unless we encounter problems.
 - [[https://ksp-kos.github.io/KOS/][kOS]] - kOS might be useful for some simpler tasks where we don't want the full power of kRPC. Might use, might not. We'll see.
-** On Hold
-  - [ ] Properly version Packer builds
-    - dev builds by commit short SHA
-    - "Prod" builds by Releae Tag

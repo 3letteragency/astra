@@ -49,3 +49,6 @@
 
 * <2021-03-01 Mon>
 - Life really do be like that sometimes, yk?
+
+* <2022-09-04 Sun>
+- 1.5 years later and here we are again. New knowledge, new skills. The vision to accomplish this is much clearer than before. I expect to have something interesting to show for it within a month or 2. Going to be reworking everyting to run on Coreweave rather than Vultr, obviously. Also going to clean everything up and see if I can run in just containers, much easier to writeup than VMs.
