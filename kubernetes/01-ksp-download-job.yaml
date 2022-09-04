@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: astra-ksp-download
+spec:
+  template:
+    spec:
+      containers:
+      - name: game-downloader
+        image: cm2network/steamcmd
+        imagePullPolicy: IfNotPresent
+        command:
+           - sleep
+           - infinity
+#          - "./steamcmd.sh"
+#          - "+force_install_dir"
+#          - "$(ASTRA_MOUNT_DIR)"
+#          - "+login"
+#          - "$(STEAM_USER)"
+#          - "$(STEAM_PASSWORD)"
+#          - "+download_depot"
+#          - "$(KSP_STEAM_APP_ID)"
+#          - "$(KSP_STEAM_DEPOT_ID)"
+#          - "$(KSP_STEAM_MANIFEST_ID)"
+#          - "+quit"
+        env:
+        - name: STEAM_USER
+          value: oogy7
+#        - name: HUGGING_FACE_HUB_TOKEN
+#          valueFrom:
+#            secretKeyRef:
+#              name: huggingface-hub-token
+#              key: token
+        volumeMounts:
+          - name: game-storage
+            mountPath: /mnt/astra
+        resources:
+          requests:
+            cpu: 1
+            memory: 4Gi
+          limits:
+            cpu: 1
+            memory: 4Gi
+      volumes:
+        - name: game-storage
+          persistentVolumeClaim:
+            claimName: astra-ksp-storage
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: topology.kubernetes.io/region
+                operator: In
+                values:
+                - ORD1
+      restartPolicy: Never
+  backoffLimit: 2
