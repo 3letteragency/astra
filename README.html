@@ -3,16 +3,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-02-13 Sat 20:04 -->
+<!-- 2022-09-04 Sun 19:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Astra Docs and Planning</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Tyler Weldon" />
-<meta name="description" content="Astra is a mission control framework for KSP to facilitate fully automated missions and operations. Also hoping to learn a bit about control theory in the process."
- />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="description" content="Astra is a mission control framework for KSP to facilitate fully automated missions and operations. Also hoping to learn a bit about control theory in the process." />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -33,8 +32,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -43,21 +43,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -192,39 +192,152 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">Astra Docs and Planning</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7846154">1. Astra</a>
+<ul>
+<li><a href="#org8cddd68">1.1. <span class="todo TODO">TODO</span> Stage 1 - Prep <code>[0/6]</code></a></li>
+<li><a href="#orgc31135e">1.2. <span class="todo TODO">TODO</span> Stage 2 - Data(and Project Automation) <code>[0/1]</code></a></li>
+<li><a href="#org25236a1">1.3. <span class="todo TODO">TODO</span> Stage 3 - RL Software integrations <code>[0/2]</code></a></li>
+<li><a href="#org308c288">1.4. <span class="todo TODO">TODO</span> Stage 4 - Operations <code>[0/3]</code></a>
+<ul>
+<li><a href="#orgc21401b">1.4.1. <span class="todo ___">[-]</span> For re-usable missions: <code>[0/1]</code></a></li>
+<li><a href="#orga5dbb65">1.4.2. <span class="todo ___">[-]</span> Starlink(s) <code>[0/0]</code></a></li>
+<li><a href="#org4305e75">1.4.3. <span class="todo ___">[-]</span> Long running, real time ops <code>[0/0]</code></a></li>
+</ul>
+</li>
+<li><a href="#org03b155c">1.5. <span class="todo TODO">TODO</span> Stage 5 - Stream Real Time Ops <code>[0/0]</code></a></li>
+<li><a href="#org9181d77">1.6. <span class="todo TODO">TODO</span> Backlog/As Needed <code>[0/2]</code></a></li>
+<li><a href="#org8b6f3d6">1.7. KSP Mod Requirements</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7846154" class="outline-2">
+<h2 id="org7846154"><span class="section-number-2">1.</span> Astra</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org8cddd68" class="outline-3">
+<h3 id="org8cddd68"><span class="section-number-3">1.1.</span> <span class="todo TODO">TODO</span> Stage 1 - Prep <code>[0/6]</code></h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Kubernetes Deployment <code>[0/9]</code>
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Mod install <code>[0/6]</code>
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/193933-110-kks-spacex-pack-july-06-2020/">KK&rsquo;s SpaceX Pack</a></li>
+<li class="off"><code>[&#xa0;]</code> RO via CKAN</li>
+<li class="off"><code>[&#xa0;]</code> Principia</li>
+<li class="off"><code>[&#xa0;]</code> Install CKAN.deb</li>
+<li class="off"><code>[&#xa0;]</code> kRPC manually from github</li>
+<li class="off"><code>[&#xa0;]</code> AutoLoadGame - Allista</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> astra-base.sfs</li>
+<li class="off"><code>[&#xa0;]</code> AutoLoadGame.conf</li>
+<li class="off"><code>[&#xa0;]</code> settings.cfg</li>
+<li class="off"><code>[&#xa0;]</code> krpc-settings.cfg</li>
+<li class="off"><code>[&#xa0;]</code> AutoLoadGame - Now supports specifying SFS files</li>
+<li class="off"><code>[&#xa0;]</code> POC kRPC - connection over Internet successful, responses receieved</li>
+<li class="off"><code>[&#xa0;]</code> Install KSP <del>1.7.3</del> 1.8.1 from S3</li>
+<li class="off"><code>[&#xa0;]</code> File provision packer/files/*</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Automate game-archiver</li>
+<li class="off"><code>[&#xa0;]</code> Choose kRPC client language - C++/Python</li>
+<li class="off"><code>[&#xa0;]</code> Xpra/xpra attach workflow for graphical debugging and SFS building</li>
+<li class="off"><code>[&#xa0;]</code> Debug RO Install, problems w/ Kopernicus?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc31135e" class="outline-3">
+<h3 id="orgc31135e"><span class="section-number-3">1.2.</span> <span class="todo TODO">TODO</span> Stage 2 - Data(and Project Automation) <code>[0/1]</code></h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Python classes <code>[0/4]</code>
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> CraftTransmitter</li>
+<li class="off"><code>[&#xa0;]</code> CraftReciever</li>
+<li class="off"><code>[&#xa0;]</code> StationTransmitter</li>
+<li class="off"><code>[&#xa0;]</code> StationReceiver</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org25236a1" class="outline-3">
+<h3 id="org25236a1"><span class="section-number-3">1.3.</span> <span class="todo TODO">TODO</span> Stage 3 - RL Software integrations <code>[0/2]</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> <a href="https://opensource.gsfc.nasa.gov/projects/GMAT/index.php">GMAT</a> - Planning</li>
+<li class="off"><code>[&#xa0;]</code> <a href="https://github.com/nasa/openmct">OpenMCT</a> - Ops HUD</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org308c288" class="outline-3">
+<h3 id="org308c288"><span class="section-number-3">1.4.</span> <span class="todo TODO">TODO</span> Stage 4 - Operations <code>[0/3]</code></h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-orgc21401b" class="outline-4">
+<h4 id="orgc21401b"><span class="section-number-4">1.4.1.</span> <span class="todo ___">[-]</span> For re-usable missions: <code>[0/1]</code></h4>
+<div class="outline-text-4" id="text-1-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="org90e6150"></a><span class="todo ___">[ ]</span> Will need something like <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/157214-19x-flight-manager-for-reusable-stages-fmrs-now-with-recoverycontroller-integration/">FMRS</a> implemented via kRPC<br /></li>
+</ol>
+</div>
+<div id="outline-container-orga5dbb65" class="outline-4">
+<h4 id="orga5dbb65"><span class="section-number-4">1.4.2.</span> <span class="todo ___">[-]</span> Starlink(s) <code>[0/0]</code></h4>
+</div>
+<div id="outline-container-org4305e75" class="outline-4">
+<h4 id="org4305e75"><span class="section-number-4">1.4.3.</span> <span class="todo ___">[-]</span> Long running, real time ops <code>[0/0]</code></h4>
+</div>
+</div>
+<div id="outline-container-org03b155c" class="outline-3">
+<h3 id="org03b155c"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> Stage 5 - Stream Real Time Ops <code>[0/0]</code></h3>
+</div>
+<div id="outline-container-org9181d77" class="outline-3">
+<h3 id="org9181d77"><span class="section-number-3">1.6.</span> <span class="todo TODO">TODO</span> Backlog/As Needed <code>[0/2]</code></h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> If TCP latency becomes a problem, try implementing a kRPC unix socket comm. protocol
+<ul class="org-ul">
+<li><del>There are module load errors in KSP.log, not sure if its preventing AutoLoadGame from doing its thing, or if that is related to the Changelog startup dialog in KSP Main Menu.</del> KSP 1.8.1 Works great</li>
+<li><del>Why are we stuck at the Change Log dialog on KSP Start?</del> A bit annoying but appears to be inconsequential for my automation purposes.
+<ul class="org-ul">
+<li>ksp settings.cfg:
+<ul class="org-ul">
+<li>SHOW<sub>WHATSNEW</sub><sub>DIALOG</sub> = False</li>
+<li><del>Version 1.7.3 was not honoring settings.cfg, lets see if 1.8.1 works</del> Still not honored in 1.8.1 but again, appears inconsequential</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8b6f3d6" class="outline-3">
+<h3 id="org8b6f3d6"><span class="section-number-3">1.7.</span> KSP Mod Requirements</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li><a href="https://github.com/allista/AutoLoadGame">AutoLoadGame</a> - by Allista, allows creating a configuration file in your saves dir that will automatically load the specified sfs file upong game start.</li>
+<li><a href="https://krpc.github.io/krpc/">kRPC</a> - kRPC allows you to control Kerbal Space Program from scripts running outside of the game.</li>
+<li><a href="https://github.com/KSP-RO/RealismOverhaul/wiki">Realism Overhaul</a> - Its not certain this will place nice with <a href="https://krpc.github.io/krpc/">kRPC</a>, however realistic(ish?) control theory is really the purpose of this project so we will proceed with it until/unless we encounter problems.</li>
+<li><a href="https://ksp-kos.github.io/KOS/">kOS</a> - kOS might be useful for some simpler tasks where we don&rsquo;t want the full power of kRPC. Might use, might not. We&rsquo;ll see.</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Tyler Weldon</p>
-<p class="date">Created: 2021-02-13 Sat 20:04</p>
+<p class="date">Created: 2022-09-04 Sun 19:31</p>
 </div>
 </body>
 </html>
