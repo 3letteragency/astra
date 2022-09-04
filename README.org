@@ -4,8 +4,8 @@
 #+EMAIL: tylerweldon94@gmail.com
 
 * Astra
-** NO Stage 1 - Prep [6/6]
-  - [ ] Script or Ansible or etc. Out Packer Script provisioner(getting long and unweildy)
+** [X] Stage 1 - Prep [6/6]
+  - [X] Script or Ansible or etc. Out Packer Script provisioner(getting long and unweildy)
   - [X] Base VM Image(Packer) [14/14]
     - [X] Change KSP version from 1.9.1 to 1.8.1 in SpaceX Pack craft files
     - [X] Add vehicles to Astra game save VAB
