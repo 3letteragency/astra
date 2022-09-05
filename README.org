@@ -5,19 +5,24 @@
 
 * Astra
 ** TODO Stage 1 - Prep [0/5]
-  - [ ] Kubernetes Deployment [0/10]
-    - [ ] Game start script [0/3]
-      - [ ] sshd [0/3]
-        - [ ] allow root
-        - [ ] public key only
-        - [ ] allow X11 forwarding
+  - [-] Kubernetes Deployment [0/10]
+    - [-] Game start script [1/3]
+      - [X] sshd [3/3]
+        - [X] allow root
+        - [X] public key only
+        - [X] allow X11 forwarding
       - [ ] xpra
       - [ ] ksp on xpra display
-    - [ ] Mod install [0/6]
-      - [ ] [[https://forum.kerbalspaceprogram.com/index.php?/topic/193933-110-kks-spacex-pack-july-06-2020/][KK's SpaceX Pack]]
-      - [ ] RO via CKAN
+    - [-] Mod install [3/7]
+      - [ ] Why are we re-implementing the existing Ansible playbook in bash? Just modify the playbook where needed... [0/1]
+        - [ ] Figure out what to do with Principia, devs host it on Google Drive?!
+          - Include in repo?
+            - ADD in Dockerfile
+          - Host elsewhere?
+      - [X] [[https://forum.kerbalspaceprogram.com/index.php?/topic/193933-110-kks-spacex-pack-july-06-2020/][KK's SpaceX Pack]]
+      - [X] RO via CKAN
       - [ ] Principia
-      - [ ] Install CKAN.deb
+      - [X] Install CKAN.deb
       - [ ] kRPC manually from github
       - [ ] AutoLoadGame - Allista
     - [ ] astra-base.sfs

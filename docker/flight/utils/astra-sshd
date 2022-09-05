@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -ex
+
+echo $PUBLIC_KEY >> /root/.ssh/authorized_keys
+
+mkdir -p /run/sshd
+/usr/sbin/sshd -D

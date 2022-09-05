@@ -52,3 +52,16 @@
 
 * <2022-09-04 Sun>
 - 1.5 years later and here we are again. New knowledge, new skills. The vision to accomplish this is much clearer than before. I expect to have something interesting to show for it within a month or 2. Going to be reworking everyting to run on Coreweave rather than Vultr, obviously. Also going to clean everything up and see if I can run in just containers, much easier to writeup than VMs.
+
+* <2022-09-05 Mon>
+- Chipping away again. Should have the game ready for dev/connecting to kRPC shortly. This was much faster to an experimental state than previous attempt.
+
+- Regarding running graphically w/ xpra and NOT in -batchmode/-nographics, CPU use is *significant*. All CPU sit at roughly 85%-95% w/ 12 CPU.
+
+  Hopefully we will not need graphics to run Principia, though, it would certainly be preferable to make use of the GPU if possible. May try to dive into Principia mod source and see if GPU may be accessed independently of the game.
+
+- I've re-implemented a decent amount of the mod installation as a bash script, basically what we started with last time. And we now know how much better it is to just use Ansible where possible...and we have the Ansible playbook for this already.
+
+  Should I continue with re-implementing in bash, or should I just modify the existing Ansible?
+
+  I think probably just use what you have, you know it works.

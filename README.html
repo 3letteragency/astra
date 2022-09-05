@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-09-04 Sun 22:45 -->
+<!-- 2022-09-05 Mon 19:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Astra Docs and Planning</title>
@@ -202,54 +202,65 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb3cc1ef">1. Astra</a>
+<li><a href="#org4b9dad7">1. Astra</a>
 <ul>
-<li><a href="#orgfda7af5">1.1. <span class="todo TODO">TODO</span> Stage 1 - Prep <code>[0/5]</code></a></li>
-<li><a href="#orgcfd6e10">1.2. <span class="todo TODO">TODO</span> Stage 2 - Data(and Project Automation) <code>[0/1]</code></a></li>
-<li><a href="#org4145636">1.3. <span class="todo TODO">TODO</span> Stage 3 - RL Software integrations <code>[0/2]</code></a></li>
-<li><a href="#org0095663">1.4. <span class="todo TODO">TODO</span> Stage 4 - Operations <code>[0/3]</code></a>
+<li><a href="#orgce34046">1.1. <span class="todo TODO">TODO</span> Stage 1 - Prep <code>[0/5]</code></a></li>
+<li><a href="#org7693bae">1.2. <span class="todo TODO">TODO</span> Stage 2 - Data(and Project Automation) <code>[0/1]</code></a></li>
+<li><a href="#org4aa5b4f">1.3. <span class="todo TODO">TODO</span> Stage 3 - RL Software integrations <code>[0/2]</code></a></li>
+<li><a href="#org69eb58f">1.4. <span class="todo TODO">TODO</span> Stage 4 - Operations <code>[0/3]</code></a>
 <ul>
-<li><a href="#org4da4656">1.4.1. <span class="todo ___">[-]</span> For re-usable missions: <code>[0/1]</code></a></li>
-<li><a href="#org9c2b7d9">1.4.2. <span class="todo ___">[-]</span> Starlink(s) <code>[0/0]</code></a></li>
-<li><a href="#org4b7e3d7">1.4.3. <span class="todo ___">[-]</span> Long running, real time ops <code>[0/0]</code></a></li>
+<li><a href="#org83f73e1">1.4.1. <span class="todo ___">[-]</span> For re-usable missions: <code>[0/1]</code></a></li>
+<li><a href="#org340d79e">1.4.2. <span class="todo ___">[-]</span> Starlink(s) <code>[0/0]</code></a></li>
+<li><a href="#orgd2f4219">1.4.3. <span class="todo ___">[-]</span> Long running, real time ops <code>[0/0]</code></a></li>
 </ul>
 </li>
-<li><a href="#orge17fd68">1.5. <span class="todo TODO">TODO</span> Stage 5 - Stream Real Time Ops <code>[0/0]</code></a></li>
-<li><a href="#org403ebd9">1.6. <span class="todo TODO">TODO</span> Backlog/As Needed <code>[0/2]</code></a></li>
-<li><a href="#org67c1902">1.7. KSP Mod Requirements</a></li>
+<li><a href="#org037025a">1.5. <span class="todo TODO">TODO</span> Stage 5 - Stream Real Time Ops <code>[0/0]</code></a></li>
+<li><a href="#org419ad62">1.6. <span class="todo TODO">TODO</span> Backlog/As Needed <code>[0/2]</code></a></li>
+<li><a href="#orgf157561">1.7. KSP Mod Requirements</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb3cc1ef" class="outline-2">
-<h2 id="orgb3cc1ef"><span class="section-number-2">1.</span> Astra</h2>
+<div id="outline-container-org4b9dad7" class="outline-2">
+<h2 id="org4b9dad7"><span class="section-number-2">1.</span> Astra</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgfda7af5" class="outline-3">
-<h3 id="orgfda7af5"><span class="section-number-3">1.1.</span> <span class="todo TODO">TODO</span> Stage 1 - Prep <code>[0/5]</code></h3>
+<div id="outline-container-orgce34046" class="outline-3">
+<h3 id="orgce34046"><span class="section-number-3">1.1.</span> <span class="todo TODO">TODO</span> Stage 1 - Prep <code>[0/5]</code></h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> Kubernetes Deployment <code>[0/10]</code>
+<li class="trans"><code>[-]</code> Kubernetes Deployment <code>[0/10]</code>
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> Game start script <code>[0/3]</code>
+<li class="trans"><code>[-]</code> Game start script <code>[1/3]</code>
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> sshd <code>[0/3]</code>
+<li class="on"><code>[X]</code> sshd <code>[3/3]</code>
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> allow root</li>
-<li class="off"><code>[&#xa0;]</code> public key only</li>
-<li class="off"><code>[&#xa0;]</code> allow X11 forwarding</li>
+<li class="on"><code>[X]</code> allow root</li>
+<li class="on"><code>[X]</code> public key only</li>
+<li class="on"><code>[X]</code> allow X11 forwarding</li>
 </ul></li>
 <li class="off"><code>[&#xa0;]</code> xpra</li>
 <li class="off"><code>[&#xa0;]</code> ksp on xpra display</li>
 </ul></li>
-<li class="off"><code>[&#xa0;]</code> Mod install <code>[0/6]</code>
+<li class="trans"><code>[-]</code> Mod install <code>[3/7]</code>
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/193933-110-kks-spacex-pack-july-06-2020/">KK&rsquo;s SpaceX Pack</a></li>
-<li class="off"><code>[&#xa0;]</code> RO via CKAN</li>
+<li class="off"><code>[&#xa0;]</code> Why are we re-implementing the existing Ansible playbook in bash? Just modify the playbook where needed&#x2026; <code>[0/1]</code>
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Figure out what to do with Principia, devs host it on Google Drive?!
+<ul class="org-ul">
+<li>Include in repo?
+<ul class="org-ul">
+<li>ADD in Dockerfile</li>
+</ul></li>
+<li>Host elsewhere?</li>
+</ul></li>
+</ul></li>
+<li class="on"><code>[X]</code> <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/193933-110-kks-spacex-pack-july-06-2020/">KK&rsquo;s SpaceX Pack</a></li>
+<li class="on"><code>[X]</code> RO via CKAN</li>
 <li class="off"><code>[&#xa0;]</code> Principia</li>
-<li class="off"><code>[&#xa0;]</code> Install CKAN.deb</li>
+<li class="on"><code>[X]</code> Install CKAN.deb</li>
 <li class="off"><code>[&#xa0;]</code> kRPC manually from github</li>
 <li class="off"><code>[&#xa0;]</code> AutoLoadGame - Allista</li>
 </ul></li>
@@ -269,8 +280,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcfd6e10" class="outline-3">
-<h3 id="orgcfd6e10"><span class="section-number-3">1.2.</span> <span class="todo TODO">TODO</span> Stage 2 - Data(and Project Automation) <code>[0/1]</code></h3>
+<div id="outline-container-org7693bae" class="outline-3">
+<h3 id="org7693bae"><span class="section-number-3">1.2.</span> <span class="todo TODO">TODO</span> Stage 2 - Data(and Project Automation) <code>[0/1]</code></h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Python classes <code>[0/4]</code>
@@ -283,8 +294,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org4145636" class="outline-3">
-<h3 id="org4145636"><span class="section-number-3">1.3.</span> <span class="todo TODO">TODO</span> Stage 3 - RL Software integrations <code>[0/2]</code></h3>
+<div id="outline-container-org4aa5b4f" class="outline-3">
+<h3 id="org4aa5b4f"><span class="section-number-3">1.3.</span> <span class="todo TODO">TODO</span> Stage 3 - RL Software integrations <code>[0/2]</code></h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> <a href="https://opensource.gsfc.nasa.gov/projects/GMAT/index.php">GMAT</a> - Planning</li>
@@ -292,30 +303,30 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org0095663" class="outline-3">
-<h3 id="org0095663"><span class="section-number-3">1.4.</span> <span class="todo TODO">TODO</span> Stage 4 - Operations <code>[0/3]</code></h3>
+<div id="outline-container-org69eb58f" class="outline-3">
+<h3 id="org69eb58f"><span class="section-number-3">1.4.</span> <span class="todo TODO">TODO</span> Stage 4 - Operations <code>[0/3]</code></h3>
 <div class="outline-text-3" id="text-1-4">
 </div>
-<div id="outline-container-org4da4656" class="outline-4">
-<h4 id="org4da4656"><span class="section-number-4">1.4.1.</span> <span class="todo ___">[-]</span> For re-usable missions: <code>[0/1]</code></h4>
+<div id="outline-container-org83f73e1" class="outline-4">
+<h4 id="org83f73e1"><span class="section-number-4">1.4.1.</span> <span class="todo ___">[-]</span> For re-usable missions: <code>[0/1]</code></h4>
 <div class="outline-text-4" id="text-1-4-1">
 </div>
 <ol class="org-ol">
-<li><a id="orga259ee6"></a><span class="todo ___">[ ]</span> Will need something like <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/157214-19x-flight-manager-for-reusable-stages-fmrs-now-with-recoverycontroller-integration/">FMRS</a> implemented via kRPC<br /></li>
+<li><a id="orge49d9c1"></a><span class="todo ___">[ ]</span> Will need something like <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/157214-19x-flight-manager-for-reusable-stages-fmrs-now-with-recoverycontroller-integration/">FMRS</a> implemented via kRPC<br /></li>
 </ol>
 </div>
-<div id="outline-container-org9c2b7d9" class="outline-4">
-<h4 id="org9c2b7d9"><span class="section-number-4">1.4.2.</span> <span class="todo ___">[-]</span> Starlink(s) <code>[0/0]</code></h4>
+<div id="outline-container-org340d79e" class="outline-4">
+<h4 id="org340d79e"><span class="section-number-4">1.4.2.</span> <span class="todo ___">[-]</span> Starlink(s) <code>[0/0]</code></h4>
 </div>
-<div id="outline-container-org4b7e3d7" class="outline-4">
-<h4 id="org4b7e3d7"><span class="section-number-4">1.4.3.</span> <span class="todo ___">[-]</span> Long running, real time ops <code>[0/0]</code></h4>
+<div id="outline-container-orgd2f4219" class="outline-4">
+<h4 id="orgd2f4219"><span class="section-number-4">1.4.3.</span> <span class="todo ___">[-]</span> Long running, real time ops <code>[0/0]</code></h4>
 </div>
 </div>
-<div id="outline-container-orge17fd68" class="outline-3">
-<h3 id="orge17fd68"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> Stage 5 - Stream Real Time Ops <code>[0/0]</code></h3>
+<div id="outline-container-org037025a" class="outline-3">
+<h3 id="org037025a"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> Stage 5 - Stream Real Time Ops <code>[0/0]</code></h3>
 </div>
-<div id="outline-container-org403ebd9" class="outline-3">
-<h3 id="org403ebd9"><span class="section-number-3">1.6.</span> <span class="todo TODO">TODO</span> Backlog/As Needed <code>[0/2]</code></h3>
+<div id="outline-container-org419ad62" class="outline-3">
+<h3 id="org419ad62"><span class="section-number-3">1.6.</span> <span class="todo TODO">TODO</span> Backlog/As Needed <code>[0/2]</code></h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> If TCP latency becomes a problem, try implementing a kRPC unix socket comm. protocol
@@ -333,8 +344,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org67c1902" class="outline-3">
-<h3 id="org67c1902"><span class="section-number-3">1.7.</span> KSP Mod Requirements</h3>
+<div id="outline-container-orgf157561" class="outline-3">
+<h3 id="orgf157561"><span class="section-number-3">1.7.</span> KSP Mod Requirements</h3>
 <div class="outline-text-3" id="text-1-7">
 <ul class="org-ul">
 <li><a href="https://github.com/allista/AutoLoadGame">AutoLoadGame</a> - by Allista, allows creating a configuration file in your saves dir that will automatically load the specified sfs file upong game start.</li>
@@ -348,7 +359,7 @@
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Tyler Weldon</p>
-<p class="date">Created: 2022-09-04 Sun 22:45</p>
+<p class="date">Created: 2022-09-05 Mon 19:02</p>
 </div>
 </body>
 </html>
