@@ -4,8 +4,15 @@
 #+EMAIL: tylerweldon94@gmail.com
 
 * Astra
-** TODO Stage 1 - Prep [0/6]
-  - [ ] Kubernetes Deployment [0/9]
+** TODO Stage 1 - Prep [0/5]
+  - [ ] Kubernetes Deployment [0/10]
+    - [ ] Game start script [0/3]
+      - [ ] sshd [0/3]
+        - [ ] allow root
+        - [ ] public key only
+        - [ ] allow X11 forwarding
+      - [ ] xpra
+      - [ ] ksp on xpra display
     - [ ] Mod install [0/6]
       - [ ] [[https://forum.kerbalspaceprogram.com/index.php?/topic/193933-110-kks-spacex-pack-july-06-2020/][KK's SpaceX Pack]]
       - [ ] RO via CKAN
