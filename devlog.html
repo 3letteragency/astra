@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-09-12 Mon 19:19 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Devlog</title>
+<meta name="author" content="Tyler Weldon" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Devlog</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org16b8f6f">1. <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span></a></li>
+<li><a href="#orgd7389ca">2. <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span></a></li>
+<li><a href="#orgecc3cae">3. <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span></a></li>
+<li><a href="#org16e1f8b">4. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-21 Thu&gt;</span></span></a></li>
+<li><a href="#orgd9e644e">5. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-08 Mon&gt;</span></span></a></li>
+<li><a href="#org20a3b5b">6. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-09 Tue&gt;</span></span></a></li>
+<li><a href="#orgcf2894c">7. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-12 Fri&gt;</span></span></a></li>
+<li><a href="#orgc5f8bc4">8. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-13 Sat&gt;</span></span></a></li>
+<li><a href="#org2d92451">9. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-01 Mon&gt;</span></span></a></li>
+<li><a href="#orgb76248c">10. <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-04 Sun&gt;</span></span></a></li>
+<li><a href="#org43c0f74">11. <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-05 Mon&gt;</span></span></a></li>
+<li><a href="#org13577d0">12. <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-12 Mon&gt;</span></span></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org16b8f6f" class="outline-2">
+<h2 id="org16b8f6f"><span class="section-number-2">1.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><p>
+Ansible provisioner porting from bash is mostly finished. Just a couple small things like a SystemD service for automatically starting KSP on deployment, and autoconfiguring the firewall to allow connections to the kRPC ports from the provisioning machine(Laptop, workstation, etc.). Adding functionality via the ansible config will be very much easier than stuffing more bash in here. Once those are done I&rsquo;ll initiate a build based on the new provisioner, at which point I think we&rsquo;ll be able to get some real work done.
+</p>
+
+<p>
+As we&rsquo;re running the game without graphics, we do need some kind of visuals. Initially I believe some combination of NASA&rsquo;s GMAT, and OpenMCT will do the trick. I&rsquo;ll begin by linking up:
+</p>
+<ul class="org-ul">
+<li>Some misc. <a href="https://krpc.github.io/krpc/python/api/space-center/space-center.html">SpaceCenter</a>, <a href="https://krpc.github.io/krpc/python/api/space-center/comms.html">Comms</a>, <a href="https://krpc.github.io/krpc/python/api/space-center/parts.html">Parts</a>, <a href="https://krpc.github.io/krpc/python/api/space-center/reference-frame.html">ReferenceFrame</a>, and <a href="https://krpc.github.io/krpc/python/api/space-center/waypoints.html">Waypoints</a> functions</li>
+<li>Most of the <a href="https://krpc.github.io/krpc/python/api/space-center/vessel.html">Vessel</a>, <a href="https://krpc.github.io/krpc/python/api/space-center/vessel.html">CelestialBody</a>, <a href="https://krpc.github.io/krpc/python/api/space-center/flight.html">Flight</a>, <a href="https://krpc.github.io/krpc/python/api/space-center/orbit.html">Orbit</a>, and <a href="https://krpc.github.io/krpc/python/api/krpc/krpc.html">kRPC</a> functions</li>
+</ul>
+
+<p>
+This should all give a pretty good picture of what is going on in the game so we can begin flying and experimenting with the Control and Flight functions.
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd7389ca" class="outline-2">
+<h2 id="orgd7389ca"><span class="section-number-2">2.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Another Saturday. I got the KSP systemd service and automatated opening the firewall for kRPC ports for connections from the controlling machine. Final image is built so we can start with the fun stuff, piping data into OpenMCT and GMAT. This will be roughly inspired by Telemachus and kerbal-openmct(both of which are quite outdated).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgecc3cae" class="outline-2">
+<h2 id="orgecc3cae"><span class="section-number-2">3.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><p>
+Its been a while, life was pretty crazy the last 6 weeks and I haven&rsquo;t done anything for this. I&rsquo;ve moved to Philadelphia, been her for almost a month now. Finally beginning to feel settled and can think clearly about side projects again. Today I rebuilt to the `astra-node` image and redeployed the terraform plan just to make sure everything works as I remember. I&rsquo;ve reviewed this log and the README, lost my way with this a bit so had to reorient. Looks like we&rsquo;re at the point of needing to setup the kRPC streams(all of them). I think what I&rsquo;ll do is setup these streams in the backend server, then write an API around that which will be called by OpenMCT(javascript/jquery) - however it should be noted this will only be for observation and basic/non-critical controls. All flight control/automation will be done on the &ldquo;flight&rdquo; servers to minimize communication latency. Or rather, anything that would actually be done onboard would be done on the &ldquo;flight&rdquo; servers, and anything that would be done remotely will be done on the c2/OpenMCT node(s). So I&rsquo;m realizing we might have 2 instances of OpenMCT, one &ldquo;onboard&rdquo; and one &ldquo;remote&rdquo; - since I think want to use OpenMCT as the flight  interface, heavily inspired by the new Crew Dragon touchscreen panel.
+</p>
+
+<p>
+Anyway. Next step in a sentence; backend data streams and astrctl cli(which will basically implement identical functionality to the OpenMCT C2, just entirely textual).
+</p></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org16e1f8b" class="outline-2">
+<h2 id="org16e1f8b"><span class="section-number-2">4.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-21 Thu&gt;</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><p>
+Well, almost exactly two months since last update and I&rsquo;ve NOT DONE A SINGLE BIT OF WORK. Ugh. Holidays and general life craziness(Did 2020 ever really end&#x2026;). I&rsquo;ve also got a new primary dev machine, so will need to first ensure I can run all the build scripts and what not from here - then I can get back to data stream integration as above. WML!
+</p>
+
+<p>
+UPDATE: Ugh. I suppose I should update my terraform modules to use the Vultr Provider v2..and might as well restructure some of the project while I&rsquo;m at it..picked up a few tricks since I started this.
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd9e644e" class="outline-2">
+<h2 id="orgd9e644e"><span class="section-number-2">5.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-08 Mon&gt;</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Just got off work and am going to go for a run. If afterwards I don&rsquo;t at least ensure I can download the Steam game, build the snapshot, and port everything to the Vultr TF Provider v2, someone open an issue on GH and call me a jabroni.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org20a3b5b" class="outline-2">
+<h2 id="org20a3b5b"><span class="section-number-2">6.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-09 Tue&gt;</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><p>
+Alright so I drank a <i>few</i> beers and my ojectives changed. I got annoyed trying to port my build scripts over to my new machine, the slight nuances here and there, and decided instead of working on the TF stuff to move the build scripts over to github actions. At this point, I&rsquo;ve got the game pulling/archiving/and uploading to s3 done. So thats nice. Next is to port the image build script over to GH Actions and the packer build over to the Vultr Packer plugin to v2&#x2026;coulda swore I already did, will need to check my ThinkPad, it might be on there. In any case it is a small task. So in short I didn&rsquo;t get done what I&rsquo;d originally planned, but got other equally helpful stuff done. You can still call me a jabroni or whatever but I&rsquo;m just gonna keep drinking beers and chipping away at this.
+</p>
+
+<p>
+Update: Ok too many beers, gonna stop touching stuff. So what I&rsquo;d originally set out to do yesterday(update the TF provider to Vultr v2) has already been done, and it is the updating Packer to the Vultr v2 plugin that still needs to be done&#x2026; <del>yay</del> cheers?
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcf2894c" class="outline-2">
+<h2 id="orgcf2894c"><span class="section-number-2">7.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-12 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li><p>
+Splitting the various Astra components(game build/archive, image build, terraform deployment module, etc.) into separate repos. Game builder repo is basically done. Will do packer image builder as part of updating packer to the Vultr v2 plugin. Need to do the actions script as well. Will be nice to not need to worry about local environment, the project should progress quite a bit faster with this automation in place.
+</p>
+
+<p>
+Update: Started this pretty much as soon as I got off work(4PM) and it is now 10:39PM. Strong day. The project organization is much better. Split out several repos:
+</p>
+
+<p>
+<a href="https://github.com/Oogy/packer-astra-flight">https://github.com/Oogy/packer-astra-flight</a>
+<a href="https://github.com/Oogy/astra-ksp">https://github.com/Oogy/astra-ksp</a>
+</p>
+
+<p>
+Next will be a separate repo for the Terraform module, and possibly the ansible plan. Maybe store a tar of the Ansible files as a release asset, pull it into the build similarly to <a href="https://github.com/Oogy/packer-astra-flight/blob/fe2cb345191f138a95901e7f0b1638892483c9af/.github/workflows/build.yml#L31">https://github.com/Oogy/packer-astra-flight/blob/fe2cb345191f138a95901e7f0b1638892483c9af/.github/workflows/build.yml#L31</a>. Time for a workout and sleep.
+</p></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgc5f8bc4" class="outline-2">
+<h2 id="orgc5f8bc4"><span class="section-number-2">8.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-13 Sat&gt;</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Just continuing from yesterday. Got the TF module in its own repo. Also setup a Discord git webhook for the 3LA org.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2d92451" class="outline-2">
+<h2 id="org2d92451"><span class="section-number-2">9.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-01 Mon&gt;</span></span></h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Life really do be like that sometimes, yk?</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb76248c" class="outline-2">
+<h2 id="orgb76248c"><span class="section-number-2">10.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-04 Sun&gt;</span></span></h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>1.5 years later and here we are again. New knowledge, new skills. The vision to accomplish this is much clearer than before. I expect to have something interesting to show for it within a month or 2. Going to be reworking everyting to run on Coreweave rather than Vultr, obviously. Also going to clean everything up and see if I can run in just containers, much easier to writeup than VMs.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org43c0f74" class="outline-2">
+<h2 id="org43c0f74"><span class="section-number-2">11.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-05 Mon&gt;</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>Chipping away again. Should have the game ready for dev/connecting to kRPC shortly. This was much faster to an experimental state than previous attempt.</li>
+
+<li><p>
+Regarding running graphically w/ xpra and NOT in -batchmode/-nographics, CPU use is <b>significant</b>. All CPU sit at roughly 85%-95% w/ 12 CPU.
+</p>
+
+<p>
+Hopefully we will not need graphics to run Principia, though, it would certainly be preferable to make use of the GPU if possible. May try to dive into Principia mod source and see if GPU may be accessed independently of the game.
+</p></li>
+
+<li><p>
+I&rsquo;ve re-implemented a decent amount of the mod installation as a bash script, basically what we started with last time. And we now know how much better it is to just use Ansible where possible&#x2026;and we have the Ansible playbook for this already.
+</p>
+
+<p>
+Should I continue with re-implementing in bash, or should I just modify the existing Ansible?
+</p>
+
+<p>
+I think probably just use what you have, you know it works.
+</p></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org13577d0" class="outline-2">
+<h2 id="org13577d0"><span class="section-number-2">12.</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-12 Mon&gt;</span></span></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>Got most of the mod install script setup, mods are already installed due to going through it manually but missing some stuff from the `ksp-conf` dir due to not being able to build a new astra-mods container for some reason(Network issues?), will have to try again tomorrow(?) and run the full script from the mods job.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Tyler Weldon</p>
+<p class="date">Created: 2022-09-12 Mon 19:19</p>
+</div>
+</body>
+</html>

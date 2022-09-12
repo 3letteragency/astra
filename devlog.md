@@ -1,21 +1,22 @@
 
 # Table of Contents
 
-1.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span>](#org729b89e)
-2.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span>](#orgf8bb58e)
-3.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span>](#org2f23d56)
-4.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-21 Thu&gt;</span></span>](#org2c944dd)
-5.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-08 Mon&gt;</span></span>](#org9bf96d7)
-6.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-09 Tue&gt;</span></span>](#org763ff5b)
-7.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-12 Fri&gt;</span></span>](#orgec6c1b9)
-8.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-13 Sat&gt;</span></span>](#org3860556)
-9.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-01 Mon&gt;</span></span>](#org3968a23)
-10. [<span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-04 Sun&gt;</span></span>](#org8bed6d8)
-11. [<span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-05 Mon&gt;</span></span>](#org89d0258)
+1.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span>](#orgfcc4305)
+2.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span>](#org1bb9963)
+3.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span>](#org10c6024)
+4.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-21 Thu&gt;</span></span>](#orge4a874f)
+5.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-08 Mon&gt;</span></span>](#orgc14370c)
+6.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-09 Tue&gt;</span></span>](#org16e345f)
+7.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-12 Fri&gt;</span></span>](#org146c688)
+8.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-13 Sat&gt;</span></span>](#org514fc94)
+9.  [<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-01 Mon&gt;</span></span>](#org86f8a5e)
+10. [<span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-04 Sun&gt;</span></span>](#org82462df)
+11. [<span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-05 Mon&gt;</span></span>](#org6db5e28)
+12. [<span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-12 Mon&gt;</span></span>](#orgcc9f186)
 
 
 
-<a id="org729b89e"></a>
+<a id="orgfcc4305"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-26 Sat&gt;</span></span>
 
@@ -29,23 +30,23 @@
     This should all give a pretty good picture of what is going on in the game so we can begin flying and experimenting with the Control and Flight functions.
 
 
-<a id="orgf8bb58e"></a>
+<a id="org1bb9963"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-03 Sat&gt;</span></span>
 
 -   Another Saturday. I got the KSP systemd service and automatated opening the firewall for kRPC ports for connections from the controlling machine. Final image is built so we can start with the fun stuff, piping data into OpenMCT and GMAT. This will be roughly inspired by Telemachus and kerbal-openmct(both of which are quite outdated).
 
 
-<a id="org2f23d56"></a>
+<a id="org10c6024"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-17 Tue&gt;</span></span>
 
 -   Its been a while, life was pretty crazy the last 6 weeks and I haven&rsquo;t done anything for this. I&rsquo;ve moved to Philadelphia, been her for almost a month now. Finally beginning to feel settled and can think clearly about side projects again. Today I rebuilt to the \`astra-node\` image and redeployed the terraform plan just to make sure everything works as I remember. I&rsquo;ve reviewed this log and the README, lost my way with this a bit so had to reorient. Looks like we&rsquo;re at the point of needing to setup the kRPC streams(all of them). I think what I&rsquo;ll do is setup these streams in the backend server, then write an API around that which will be called by OpenMCT(javascript/jquery) - however it should be noted this will only be for observation and basic/non-critical controls. All flight control/automation will be done on the &ldquo;flight&rdquo; servers to minimize communication latency. Or rather, anything that would actually be done onboard would be done on the &ldquo;flight&rdquo; servers, and anything that would be done remotely will be done on the c2/OpenMCT node(s). So I&rsquo;m realizing we might have 2 instances of OpenMCT, one &ldquo;onboard&rdquo; and one &ldquo;remote&rdquo; - since I think want to use OpenMCT as the flight  interface, heavily inspired by the new Crew Dragon touchscreen panel.
     
-    Anyway. Next step in a sentance; backend data streams and astrctl cli(which will basically implement identical functionality to the OpenMCT C2, just entirely textual).
+    Anyway. Next step in a sentence; backend data streams and astrctl cli(which will basically implement identical functionality to the OpenMCT C2, just entirely textual).
 
 
-<a id="org2c944dd"></a>
+<a id="orge4a874f"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-21 Thu&gt;</span></span>
 
@@ -54,14 +55,14 @@
     UPDATE: Ugh. I suppose I should update my terraform modules to use the Vultr Provider v2..and might as well restructure some of the project while I&rsquo;m at it..picked up a few tricks since I started this.
 
 
-<a id="org9bf96d7"></a>
+<a id="orgc14370c"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-08 Mon&gt;</span></span>
 
 -   Just got off work and am going to go for a run. If afterwards I don&rsquo;t at least ensure I can download the Steam game, build the snapshot, and port everything to the Vultr TF Provider v2, someone open an issue on GH and call me a jabroni.
 
 
-<a id="org763ff5b"></a>
+<a id="org16e345f"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-09 Tue&gt;</span></span>
 
@@ -70,7 +71,7 @@
     Update: Ok too many beers, gonna stop touching stuff. So what I&rsquo;d originally set out to do yesterday(update the TF provider to Vultr v2) has already been done, and it is the updating Packer to the Vultr v2 plugin that still needs to be done&#x2026; <del>yay</del> cheers?
 
 
-<a id="orgec6c1b9"></a>
+<a id="org146c688"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-12 Fri&gt;</span></span>
 
@@ -84,28 +85,28 @@
     Next will be a separate repo for the Terraform module, and possibly the ansible plan. Maybe store a tar of the Ansible files as a release asset, pull it into the build similarly to <https://github.com/Oogy/packer-astra-flight/blob/fe2cb345191f138a95901e7f0b1638892483c9af/.github/workflows/build.yml#L31>. Time for a workout and sleep.
 
 
-<a id="org3860556"></a>
+<a id="org514fc94"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-13 Sat&gt;</span></span>
 
 -   Just continuing from yesterday. Got the TF module in its own repo. Also setup a Discord git webhook for the 3LA org.
 
 
-<a id="org3968a23"></a>
+<a id="org86f8a5e"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-01 Mon&gt;</span></span>
 
 -   Life really do be like that sometimes, yk?
 
 
-<a id="org8bed6d8"></a>
+<a id="org82462df"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-04 Sun&gt;</span></span>
 
 -   1.5 years later and here we are again. New knowledge, new skills. The vision to accomplish this is much clearer than before. I expect to have something interesting to show for it within a month or 2. Going to be reworking everyting to run on Coreweave rather than Vultr, obviously. Also going to clean everything up and see if I can run in just containers, much easier to writeup than VMs.
 
 
-<a id="org89d0258"></a>
+<a id="org6db5e28"></a>
 
 # <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-05 Mon&gt;</span></span>
 
@@ -120,4 +121,11 @@
     Should I continue with re-implementing in bash, or should I just modify the existing Ansible?
     
     I think probably just use what you have, you know it works.
+
+
+<a id="orgcc9f186"></a>
+
+# <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-12 Mon&gt;</span></span>
+
+-   Got most of the mod install script setup, mods are already installed due to going through it manually but missing some stuff from the \`ksp-conf\` dir due to not being able to build a new astra-mods container for some reason(Network issues?), will have to try again tomorrow(?) and run the full script from the mods job.
 

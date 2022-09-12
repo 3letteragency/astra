@@ -65,3 +65,7 @@
   Should I continue with re-implementing in bash, or should I just modify the existing Ansible?
 
   I think probably just use what you have, you know it works.
+
+
+* <2022-09-12 Mon>
+- Got most of the mod install script setup, mods are already installed due to going through it manually but missing some stuff from the `ksp-conf` dir due to not being able to build a new astra-mods container for some reason(Network issues?), will have to try again tomorrow(?) and run the full script from the mods job.
