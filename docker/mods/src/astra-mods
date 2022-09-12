@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+ASTRA_DIR=/mnt/astra/steamapps/content/app_220200/depot_220203
+
+# Game config
+cp /opt/astra/ksp-conf/ksp-settings.cfg $ASTRA_DIR/settings.cfg
+
+wget https://github.com/KSP-CKAN/CKAN/releases/download/v1.28.0/ckan_1.28.0_all.deb
+apt -y install ./ckan_1.28.0_all.deb
+rm -f ckan*.deb
+
+# Install CKAN mods
+ckan ksp add astra $ASTRA_DIR
+ckan update --headless
+ckan upgrade --headless RSSTextures2048=v18.3
+ckan upgrade --headless --no-recommends RealSolarSystem=v18.1.3
+ckan upgrade install --headless --no-recommends RealismOverhaul=v13.0.0
+ckan compat add 1.9.1
+ckan install --headless SpaceXLaunchVehicles
+
+#Install raw mods
+# kRPC
+cd $(mktemp -d)
+wget https://github.com/haeena/krpc/releases/download/v0.4.9.1/krpc-0.4.9.1.zip
+unzip krpc*.zip
+mv GameData/kRPC $ASTRA_DIR/GameData
+cp /opt/astra/ksp-conf/krpc-settings.cfg $ASTRA_DIR/GameData/kRPC/PluginData/settings.cfg
+
+# AutoLoadGame
+ckan upgrade --headless autoloadgame=1.0.10
+cp -R /opt/astra/ksp-conf/Astra $ASTRA_DIR/saves
+cp /opt/astra/ksp-conf/AutoLoadGame.conf $ASTRA_DIR/save
+
+# Principia
+export PRINCIPIA_TMP_DIR=$(mktemp -d)
+unzip /opt/astra/prinzipia*.zip $PRINCIPIA_TMP_DIR
+cp -r $PRINCIPIA_TMP_DIR/GameData/Principia/ $ASTRA_DIR/GameData/
+rm -rf $PRINCIPIA_TMP_DIR

@@ -5,6 +5,8 @@ import terminaltables
 from tkinter import *
 from tkinter import ttk
 
+import numpy 
+
 def client_config():
     p = argparse.ArgumentParser(description='Astractl')
 

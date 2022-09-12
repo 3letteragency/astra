@@ -1,34 +1,17 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: astra-ksp-download
+  name: astra-mods-download
 spec:
   template:
     spec:
       containers:
-      - name: game-downloader
-        image: cm2network/steamcmd
+      - name: mods-downloader
+        image: oogy/astra-mods:2
         imagePullPolicy: IfNotPresent
         command:
-#          - "./steamcmd.sh"
-#          - "+force_install_dir"
-#          - "$(ASTRA_MOUNT_DIR)"
-#          - "+login"
-#          - "$(STEAM_USER)"
-#          - "$(STEAM_PASSWORD)"
-#          - "+download_depot"
-#          - "$(KSP_STEAM_APP_ID)"
-#          - "$(KSP_STEAM_DEPOT_ID)"
-#          - "$(KSP_STEAM_MANIFEST_ID)"
-#          - "+quit"
-        env:
-        - name: STEAM_USER
-          value: oogy7
-#        - name: HUGGING_FACE_HUB_TOKEN
-#          valueFrom:
-#            secretKeyRef:
-#              name: huggingface-hub-token
-#              key: token
+          - sleep
+          - infinity
         volumeMounts:
           - name: game-storage
             mountPath: /mnt/astra
