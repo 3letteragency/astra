@@ -7,11 +7,8 @@ spec:
     spec:
       containers:
       - name: mods-downloader
-        image: oogy/astra-mods:2
+        image: oogy/astra-mods:4
         imagePullPolicy: IfNotPresent
-        command:
-          - sleep
-          - infinity
         volumeMounts:
           - name: game-storage
             mountPath: /mnt/astra

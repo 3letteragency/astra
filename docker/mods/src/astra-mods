@@ -23,16 +23,16 @@ ckan install --headless SpaceXLaunchVehicles
 cd $(mktemp -d)
 wget https://github.com/haeena/krpc/releases/download/v0.4.9.1/krpc-0.4.9.1.zip
 unzip krpc*.zip
-mv GameData/kRPC $ASTRA_DIR/GameData
+cp GameData/kRPC $ASTRA_DIR/GameData
 cp /opt/astra/ksp-conf/krpc-settings.cfg $ASTRA_DIR/GameData/kRPC/PluginData/settings.cfg
 
 # AutoLoadGame
 ckan upgrade --headless autoloadgame=1.0.10
 cp -R /opt/astra/ksp-conf/Astra $ASTRA_DIR/saves
-cp /opt/astra/ksp-conf/AutoLoadGame.conf $ASTRA_DIR/save
+cp /opt/astra/ksp-conf/AutoLoadGame.conf $ASTRA_DIR/saves
 
 # Principia
 export PRINCIPIA_TMP_DIR=$(mktemp -d)
-unzip /opt/astra/prinzipia*.zip $PRINCIPIA_TMP_DIR
+unzip /opt/astra/principia*.zip -d $PRINCIPIA_TMP_DIR
 cp -r $PRINCIPIA_TMP_DIR/GameData/Principia/ $ASTRA_DIR/GameData/
 rm -rf $PRINCIPIA_TMP_DIR

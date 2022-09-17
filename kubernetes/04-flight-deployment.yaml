@@ -22,7 +22,7 @@ spec:
             claimName: astra-ksp-storage
       containers:
         - name: astra-flight
-          image: oogy/astra:alpha1
+          image: oogy/astra:alpha2
           imagePullPolicy: IfNotPresent
           command:
             - sleep

@@ -1,0 +1,2 @@
+krpc
+protobuf<=3.20

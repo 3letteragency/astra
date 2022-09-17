@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-set -ex
-
 astra-sshd &
-astra-xpra &
-astra-game &
+#astra-xpra &
+#astra-game &
 
 wait -n
 
