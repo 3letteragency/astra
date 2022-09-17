@@ -45,6 +45,7 @@ position = client.add_stream(vessel.position, reference_frame)
 logger.info(f'POSITION STREAM TEST: {position()}')
 
 blackbox = vessel.flight()
+# register all streams from dir(blacbox)
 
 logger.info(f'REGISTERING STREAM: VELOCITY, "{vessel.name}"')
 velocity = client.add_stream(getattr, blackbox, 'velocity')
